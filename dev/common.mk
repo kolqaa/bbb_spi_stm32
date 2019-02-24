@@ -102,7 +102,10 @@ CFLAGS += -I$(CUBE_PATH)/Drivers/STM32F1xx_HAL_Driver/Inc/
 CUBE_SRC := \
 	Projects/STM3210E_EVAL/Examples/GPIO/GPIO_IOToggle/Src/stm32f1xx_it.c \
 	Projects/STM3210E_EVAL/Examples/GPIO/GPIO_IOToggle/Src/system_stm32f1xx.c
-CFLAGS += -I$(CUBE_PATH)/Projects/STM3210E_EVAL/Examples/GPIO/GPIO_IOToggle/Inc
+
+CFLAGS += -I$(CUBE_PATH)/Projects/STM3210E_EVAL/Examples/GPIO/GPIO_IOToggle/Inc \
+	  -I$(CUBE_PATH)/Projects/STM32VL-Discovery/Examples/SPI/SPI_FullDuplex_ComIT/Inc
+#	  -I$(CUBE_PATH)/Projects/STM3210E_EVAL/Examples/UART/UART_Printf/Inc
 
 # Adding CubeMX drivers
 CUBE_ASM_SRC += \
@@ -114,6 +117,7 @@ CUBE_SRC += \
 	Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c \
 	Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c \
 	Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c \
+	Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c
 
 LDSCRIPT := source/STM32F103x8.ld
 LDFLAGS += -L source

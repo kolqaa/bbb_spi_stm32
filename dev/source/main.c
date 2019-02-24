@@ -1,36 +1,40 @@
 #include "main.h"
 
-static void ledOn(void)
+static void led_on(void)
 {
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
 }
 
-static void ledOff(void)
+static void led_off(void)
 {
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
 }
 
-static void board_init(void)
+int add(void)
 {
-	HAL_Init();
+	int a;
+	int b;
+	return a + b;
+}
+int main(void)
+{
+	SPI_HandleTypeDef spi_data = {0};
 
+	HAL_Init();
 	/* Configure the system clock to 72 MHz */
 	SystemClock_Config();
 
 	/* Configure led */
 	led_init();
-}
 
-int main(void)
-{
-	board_init();
-//	spi_init();
+	/* Configure spi */
+	spi_init(&spi_data);
 
 	while (1) {
-		ledOn();
+		led_on();
 		HAL_Delay(300);
 
-		ledOff();
+		led_off();
 		HAL_Delay(300);
 	}
 
