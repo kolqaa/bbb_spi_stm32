@@ -19,6 +19,8 @@
 # Project sources
 C_SRC := \
 	source/main.c \
+	source/board_configuration.c \
+	source/board_common.c \
 
 CFLAGS := -I include
 

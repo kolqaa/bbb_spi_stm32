@@ -10,5 +10,7 @@
 
 // CubeMX headers
 #include "stm32f1xx_hal.h"
+#include "board_common.h"
+#include "board_configuration.h"
 
 #endif /* __MAIN_H__ */
