@@ -3,6 +3,6 @@
 
 void SystemClock_Config(void);
 void led_init(void);
-void spi_init(void);
+void spi_init(SPI_HandleTypeDef *spi_data);
 
 #endif /* __BOARD_CONFIGURATION_H__ */
