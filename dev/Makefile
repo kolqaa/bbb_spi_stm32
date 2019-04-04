@@ -20,7 +20,8 @@
 C_SRC := \
 	source/main.c \
 	source/board_common.c \
-	source/board_configuration.c
+	source/board_conf.c \
+	source/board_spi.c
 
 CFLAGS := -I include
 

@@ -96,7 +96,7 @@ AFLAGS += -MD
 CFLAGS += -DSTM32F1xx
 CFLAGS += -DSTM32F103xB
 CFLAGS += -DUSE_HAL_DRIVER
-CFLAGS += -I$(CUBE_PATH)/Drivers/STM32F1xx_HAL_Driver/Inc/
+CFLAGS += -I$(CUBE_PATH)/Drivers/STM32F1xx_HAL_Driver/Inc
 
 # Let's reuse generic source code
 CUBE_SRC := \
@@ -104,8 +104,8 @@ CUBE_SRC := \
 	Projects/STM3210E_EVAL/Examples/GPIO/GPIO_IOToggle/Src/system_stm32f1xx.c
 
 CFLAGS += -I$(CUBE_PATH)/Projects/STM3210E_EVAL/Examples/GPIO/GPIO_IOToggle/Inc \
-	  -I$(CUBE_PATH)/Projects/STM32VL-Discovery/Examples/SPI/SPI_FullDuplex_ComIT/Inc
-#	  -I$(CUBE_PATH)/Projects/STM3210E_EVAL/Examples/UART/UART_Printf/Inc
+	  -I$(CUBE_PATH)/Projects/STM32VL-Discovery/Examples/SPI/SPI_FullDuplex_ComIT/Inc \
+	  -I$(CUBE_PATH)/Projects/STM3210E_EVAL/Examples/UART/UART_Printf/Inc
 
 # Adding CubeMX drivers
 CUBE_ASM_SRC += \
@@ -117,6 +117,7 @@ CUBE_SRC += \
 	Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c \
 	Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c \
 	Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c \
+	Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c \
 	Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c
 
 LDSCRIPT := source/STM32F103x8.ld
